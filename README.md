@@ -12,7 +12,7 @@ Développé par [Utarwyn](https://github.com/utarwyn).
 ### En quoi consiste cet outil ?
 
 Ce site internet interactif a été conçu dans le but de fournir un outil aux joueurs du Survie de UTARIA pour leur permettre de **soumettre des bugs trouvés** (ou des idées) à l'équipe d'administration. Il a pour objectif d'être **simple** et **intuitif** afin de **simplifier la tâche des joueurs**.
-> Toutefois, il ne fournit pas d'interface de visualisation/administration des retours. Compte-tenu du planning qui était à respecter, nous n'avions pas pu la développer. Il faut donc accéder directement à la base de données pour y avoir accès (via HeidiSQL par exemple - ou en ligne de commandes -). **Un autre outil verra le jour plus tard pour y avoir accès via une interface simple.**
+> Toutefois, il ne fournit pas d'interface de visualisation/administration des retours. Compte-tenu du planning qui était à respecter, nous n'avions pas pu la développer. Il faut donc accéder directement à la base de données pour y avoir accès (via HeidiSQL par exemple - ou en ligne de commandes -). **Un autre outil verra le jour plus tard pour y avoir accès via une interface simple *([disponible ici !](https://github.com/Utaria/feedback.utaria.fr/tree/master/panel))*.**
 
 ### Quelques images du site internet ?
 
