@@ -27,5 +27,14 @@ La partie intégration/animation est développée en **HTML/CSS/JS natif**, sans
 
 > __Disclaimer:__ Le site internet a été réalisé **fin 2016** et ne reflète plus les technologies utilisées aujourd'hui par l'équipe de UTARIA ni même le développeur de ce site.
 
+### Comment je fais pour mettre à jour le site ?
+
+ * Clôner le dépôt Github.
+ * Préparer votre base de données en créant une table avec la structure suivante : [creation-table.sql](https://github.com/Utaria/feedback.utaria.fr/blob/master/creation-table.sql).
+ * Editer le fichier [config.sample.php](https://github.com/Utaria/feedback.utaria.fr/blob/master/config.sample.php) et le renommer en *config.php* pour qu'il soit pris en compte.
+ * Lancer le serveur MySQL et le serveur PHP.
+ * Vous êtes prêts !
+
+> Si jamais vous avez un problème, n'hésitez pas à contacter [@Utarwyn](https://twitter.com/Utarwyn).
 
 On remercie tous les participants du jeu et les joueurs de notre V1, sans qui nous ne serions pas là aujourd'hui. :fire: :heart_eyes: 
