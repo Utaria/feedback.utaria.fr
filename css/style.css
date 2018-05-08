@@ -1,0 +1,456 @@
+*{
+	margin: 0;padding: 0;
+	outline: 0;border: 0;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {background: #FFF;overflow:hidden}
+body, html{height:100%}
+
+
+/* ------------------------------ */
+/*    SYSTEME DE COLONNES         */
+/* ------------------------------ */
+.row-container {
+	display: block;position: relative;
+	max-width: 1170px;height: 100%;
+	margin: auto;
+}
+.row-container .left, 
+.row-container .right {
+	display: block;position: relative;
+	width: 50%;height: 100%;
+	float: left;
+}
+
+
+/* ------------------------------ */
+/*    EN-TÊTE DE LA PAGE          */
+/* ------------------------------ */
+header{
+	display: block;position: relative;
+	width: 100%;height: 160px;
+}
+
+
+header .top-bar {
+	display: block;position: relative;
+	width: 100%;height: 40px;
+	clear: both;
+
+	background: #000;
+	/*background: #2A2A2A;*/
+	
+	color: #FFF;
+	text-transform: uppercase;
+	
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 0.95em;
+	line-height: 40px;
+}
+header .top-bar i.fa           {color: #f1c40f;font-size:1.1em;padding-right:10px}
+header .top-bar .players-count {}
+header .top-bar .right         {text-align: right;}
+
+
+header .main-bar {
+	display: block;position: relative;
+	width: 100%;height: 120px;
+	clear: both;
+	
+	background: #1C1C1C;
+	/*background: #EEEEEE;*/
+}
+header .main-bar #logo {
+	display: block;position: relative;
+	width: auto;height: 80px;
+	
+	margin: 20px 0;
+	
+	background: url(https://utaria.fr/img/logo.png) no-repeat left top;
+}
+header .main-bar.small-bar      {height:80px}
+header .main-bar.small-bar #logo{height:80px;margin:10px 0;background-size:246px 60px}
+
+
+/* ------------------------------ */
+/*    SECTION PRINCIPALE          */
+/* ------------------------------ */
+section#main {
+	display: block;position: relative;
+	width: 100%;height: calc(100% - 120px);
+	
+	/*overflow: hidden;*/
+	overflow: scroll;
+}
+
+section#main .feedback-form-container {
+	height: auto;
+	margin-top: 50px;
+}
+section#main .feedback-form-container h1.form-title {
+	margin-bottom: 60px;
+	
+	font-family: "Lato", Arial, sans-serif;
+	font-weight: 900;
+	font-size: 2.2em;
+	/*color: #2980b9;*/
+	text-transform: uppercase;
+}
+
+section#main .steps-tracker {
+	width: 50px;
+	margin-top: 80px;
+}
+section#main .steps-tracker .step-trace {
+	display: block;position: absolute;
+	height: 800px;width: 4px;
+	top: 10px;left: 13px;
+
+	background: #DDD;
+	z-index: -2;
+}
+section#main .steps-tracker .step-trace .progress-trace {
+	display: block;position: absolute;
+	left: 0;top: 0;right: 0;
+	width: 100%;height: 0;
+	
+	background: #2980b9;
+	
+	-webkit-transition: ease-out .5s;
+	   -moz-transition: ease-out .5s;
+	    -ms-transition: ease-out .5s;
+	     -o-transition: ease-out .5s;
+	        transition: ease-out .5s;
+}
+section#main .steps-tracker .step {
+	display: block;position: absolute;
+	width: 30px;height: 30px;
+	
+	background: #DDD;
+	color: #383838;
+	text-align: center;
+	line-height: 30px;
+	
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+	
+	font-family: "Lato";
+	font-weight: 700;	
+	font-size: 1em;
+	
+	-webkit-transition: ease-out .3s;
+	   -moz-transition: ease-out .3s;
+	    -ms-transition: ease-out .3s;
+	     -o-transition: ease-out .3s;
+	        transition: ease-out .3s;
+}
+section#main .steps-tracker .step.active {
+	background: #2980b9;
+	color: #FFF;
+	
+	cursor: pointer;
+}
+section#main .steps-tracker .step:before {
+	display: block;position: absolute;
+	left: 50%;top: 50%;
+	width: 0;height: 0;
+	content: " ";
+	
+	background: #FFF;
+	/*background: red;*/
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+	z-index: -1;
+	
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(183, 183, 183, 0.50);
+       -moz-box-shadow: 0px 0px 10px 2px rgba(183, 183, 183, 0.50);
+	        box-shadow: 0px 0px 10px 2px rgba(183, 183, 183, 0.50);
+	
+	-webkit-transition: ease-out .2s;
+	   -moz-transition: ease-out .2s;
+	    -ms-transition: ease-out .2s;
+	     -o-transition: ease-out .2s;
+	        transition: ease-out .2s;
+}
+section#main .steps-tracker .step.active:before {
+	left: -5px;top: -5px;
+	width: 40px;height: 40px;
+}
+
+section#main .feedback-form {
+	width: calc(100% - 60px);
+	margin-left: 10px;
+}
+section#main .feedback-form .form-step {
+	display: none;position: relative;
+	width: 100%;height: auto;
+	
+	-webkit-transition: ease-out .5s;
+	   -moz-transition: ease-out .5s;
+	    -ms-transition: ease-out .5s;
+	     -o-transition: ease-out .5s;
+	        transition: ease-out .5s;
+}
+
+form .input {
+	display: block;position: relative;
+	width: 100%;height: auto;
+	
+	margin: 30px 0;
+	margin-bottom: 50px;
+}
+form .input.textarea {top:20px}
+form .input input,
+form .input .select,
+form .input textarea {
+	display: block;position: relative;
+	width: 100%;height: 60px;
+	
+	border-bottom: 2px solid #DDD;
+	background: none;
+	
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	
+	-webkit-transition: ease-out .2s;
+	   -moz-transition: ease-out .2s;
+	    -ms-transition: ease-out .2s;
+	     -o-transition: ease-out .2s;
+	        transition: ease-out .2s;
+}
+form .input textarea {
+	height: 100px;
+	width: 100%;
+	resize: none;
+	-ms-overflow: hidden;
+	    overflow: hidden;
+}
+form .input input   + label,
+form .input .select + label,
+form .input.textarea label {
+	display: block;position: relative;
+	top: -40px;
+	
+	font-family: "Open Sans";
+	font-weight: 300;	
+	font-size: 24px;
+	
+	color: #AAA;
+	cursor: text;
+	
+	-webkit-transition: ease-out .2s;
+	   -moz-transition: ease-out .2s;
+	    -ms-transition: ease-out .2s;
+	     -o-transition: ease-out .2s;
+	        transition: ease-out .2s;
+}
+form .input.textarea label {
+	font-size: 20px;
+	color: #3498db;
+}
+form .input input:focus,
+form .input.filled input,
+form .input textarea:focus {
+	border-bottom-width: 3px;
+	border-color: #3498db;
+}
+form .input input:focus  + label,
+form .input.filled input + label {
+	font-size: 20px;
+	top: -80px;
+	
+	color: #3498db;
+}
+form .input.filled input               {border-color:#DDDDDD}
+form .input.filled input:focus         {border-color:#3498db}
+form .input.filled input + label       {color:#AAAAAA}
+form .input.filled input:focus + label {color:#3498db}
+
+form .input.verified.filled input         {border-color:#2ecc71}
+form .input.error.filled input            {border-color:#e74c3c}
+form .input.verified.filled input + label {color:#2ecc71}
+form .input.error.filled input + label    {color:#e74c3c}
+
+form .input.waiting input:disabled {
+	background: none;
+	cursor: not-allowed;
+}
+form .input.waiting input:disabled + label {
+	cursor: not-allowed;
+}
+form .input.waiting:after{
+	display: block;position: absolute;
+	width: 24px;height: 24px;
+	right: 20px;top: 20px;
+	
+	content: " ";
+	background: url(../img/loader.gif) left top;
+	-webkit-background-size: 24px 24px;
+	     -o-background-size: 24px 24px;
+	        background-size: 24px 24px;
+}
+form .input.verified:after{
+	display: block;position: absolute;
+	width: 24px;height: 24px;
+	right: 20px;top: 20px;
+	
+	content: " ";
+	background: url(../img/checkmark.png) left top;
+	-webkit-background-size: 24px 24px;
+	     -o-background-size: 24px 24px;
+	        background-size: 24px 24px;
+}
+form .input.verified:before{
+	display: block;position: absolute;
+	width: 60px;height: 60px;
+	right: 2px;top: 0;
+	
+	content: " ";
+	background: #e2ffe7;
+}
+form .input.error:after{
+	display: block;position: absolute;
+	width: 24px;height: 24px;
+	right: 20px;top: 20px;
+	
+	content: " ";
+	background: url(../img/warn.png) left top;
+	-webkit-background-size: 24px 24px;
+	     -o-background-size: 24px 24px;
+	        background-size: 24px 24px;
+}
+form .input.error:before{
+	display: block;position: absolute;
+	width: 60px;height: 60px;
+	right: 2px;top: 0;
+	
+	content: " ";
+	background: #ffe0e0;
+}
+
+form .input p.error-message {
+	display: block;position: relative;
+	
+	top: -20px;
+
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: red;
+}
+
+form button[type="submit"] {
+	display: block;position: relative;
+	width: auto;height: 40px;
+	float: right;
+	
+	line-height: 40px;
+	padding: 0 20px;
+	
+	background: #3498db;
+	cursor: pointer;
+	
+	font-family: "Lato";
+	font-weight: 700;	
+	font-size: 1em;
+	text-transform: uppercase;
+	color: #FFF;
+	
+	-webkit-transition: ease-out .2s;
+	   -moz-transition: ease-out .2s;
+	    -ms-transition: ease-out .2s;
+	     -o-transition: ease-out .2s;
+	        transition: ease-out .2s;
+}
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+	background: #2D87C4;
+}
+
+form#form-submit-form {display:none}
+
+
+
+
+.notif{
+	display: block;position: fixed;
+	left: 0;top: -68px;right: 0;
+	width: 100%;height: 68px;
+	
+	z-index: 50;
+	
+	-webkit-transition: ease-out .3s;
+	   -moz-transition: ease-out .3s;
+	    -ms-transition: ease-out .3s;
+	     -o-transition: ease-out .3s;
+	        transition: ease-out .3s;
+}
+.notif .icon{
+	display: block;position: relative;
+	width: 68px;height: 68px;
+	float: left;
+	
+	background: rgba(0,0,0,0.5);
+}
+.notif .icon:before{
+	display: block;position: absolute;
+	left: 0;top: 0;bottom: 0;right: 0;
+	width: 68px;height: 68px;
+	content: "\f0a1";
+	
+	color: #FFF;
+	font-size: 2em;
+	font-family: FontAwesome;
+	text-align: center;
+	line-height: 68px;
+	
+	transform: scale(0);
+	-webkit-transition: ease-out .5s;
+	   -moz-transition: ease-out .5s;
+	    -ms-transition: ease-out .5s;
+	     -o-transition: ease-out .5s;
+	        transition: ease-out .5s;
+}
+.notif.opened{top:0}
+.notif.opened .icon:before{transform:scale(1)}
+.notif .message{
+	display: block;position: relative;
+	width: calc(100% - 68px);height: 68px;
+	float: left;
+	
+	padding: 0 25px;
+	line-height: 68px;
+	
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
+	color: #FFF;
+}
+.notif .close{
+	display: block;position: absolute;
+	top: 0;bottom: 0;right: 0;
+	width: 68px;height: 68px;
+	
+	text-align: center;line-height: 68px;
+	color: rgba(0,0,0,0.4);
+	
+	-webkit-transition: ease-out .2s;
+	   -moz-transition: ease-out .2s;
+	    -ms-transition: ease-out .2s;
+	     -o-transition: ease-out .2s;
+	        transition: ease-out .2s;
+}
+.notif .close:hover{
+	cursor: pointer;
+	color: #fff;
+}
+
+
+.notif.notif-danger{background:rgba(231, 76, 60, 0.95)}
+.notif.notif-success{background:rgba(39, 174, 96, 0.95)}
+.notif.notif-success .icon:before{content:"\f00c"}
+.notif.notif-danger .icon:before{content:"\f00d"}
